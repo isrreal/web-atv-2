@@ -1,15 +1,31 @@
+/* Aplica fonte global sem afetar layout */
 * {
-    background-color: lightgray;
-    border-radius: 10px;
     font-family: "Times New Roman", Times, serif;
+    box-sizing: border-box;
 }
 
+/* Página inteira com fundo branco */
+body {
+    margin: 0;
+    background-color: white;
+}
+
+/* Contêiner principal de conteúdo */
+main, .content {
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Seus estilos mantidos */
 aside {
-  width: 30%;
-  padding-left: 15px;
-  margin-left: 15px;
-  font-style: italic;
-  background-color: lightgray;
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    font-style: italic;
+    background-color: lightgray;
 }
 
 figure, footer {
@@ -33,10 +49,6 @@ figure, footer {
     width: 35%;
 }
 
-.meu-copyright {
-    
-}
-
 a:link {
     color: black;
     text-decoration: none;
@@ -49,3 +61,4 @@ a:hover {
 a:active {
     color: white;
 }
+
