@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title> Defend the Roman Empire! </title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <h1> Defend Roman Empire! </h1>
+    <header>
+        <nav>
+            <ul> 
+                <li> <a href="#contexto"> De onde veio o problema de dominação romana? </a></li>
+                <li> <a href="#problema-de-otimizacao"> O que é um problema de otimização combinatória ? </a></li>
+                <li> <a href="#dominacao-romana"> O que é o problema de dominação romana em grafos? </a></li>
+                <li> <a href="#dominacao-romana-tripla"> O que é o problema de dominação romana tripla em grafos? </a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <figure>
+            <img class="roman-empire-trajan-image" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Roman_Empire_Trajan_117AD.png/1024px-Roman_Empire_Trajan_117AD.png">
+            <figcaption> Extensão do Império Romano durante a Pax Romana. </figcaption>
+        </figure>
+
+        <article>
+           <section>
+            <h1 id="contexto"> Contexto </h1>
+               Durante o terceiro século da Era Comum, o Império Romano atingiu seu auge, dominando vastas regiões da Europa, Ásia e África com cerca de cinquenta legiões espalhadas em territórios como Gália, Egito, Britânia e Roma. A estratégia de defesa então adotada era avançada, com fortificações ao longo das fronteiras para impedir invasões.
+
+Com o declínio militar no século IV, e a redução das legiões pela metade, o imperador Constantino, o Grande, implementou a estratégia de defesa em profundidade. Essa nova abordagem dividia as legiões restantes em grupos distribuídos entre os estados do império. Um estado era considerado protegido se abrigasse um grupo, ou protegível se vizinho a um estado com dois grupos, permitindo mobilidade e resposta rápida, enquanto milícias locais retardavam os inimigos.
+
+Essa lógica influenciou outras potências imperiais. O Império Britânico, no início do século XX, também abandonou a defesa avançada em favor da defesa em profundidade, diante da redução de suas frotas navais. Já na Segunda Guerra Mundial, o general americano Douglas MacArthur aplicou conceito semelhante no Pacífico, com a estratégia de “salto de ilhas”, deslocando tropas sem deixar regiões estratégicas vulneráveis.
+
+            <section id="dominacao-romana">
+                  <h2>Dominação Romana em Grafos</h2>
+                  <p>
+                    A quantidade de legiões protegendo cada estado é indicada por um rótulo em cada vértice. 
+                    A função <strong>h: V(G) → {0, 1, 2}</strong> é chamada de <strong>função de dominação romana (FDR)</strong> em G, 
+                    se todo vértice <em>v ∈ V(G)</em> para o qual <em>h(v) = 0</em> está conectado a pelo menos um vértice <em>w</em> 
+                    tal que <em>h(w) = 2</em> (Cockayne et al., 2004).
+                  </p>
+                  <p>
+                    Portanto, utilizando a terminologia de Constantino, a restrição imposta por uma função de dominação romana 
+                    equivale à exigência de que todo estado não protegido deve ser <strong>protegível</strong> (Stewart, 1999).
+                  </p>
+                  <p>
+                    O <strong>peso</strong> da função de dominação romana é denotado por 
+                    <em>h(V(G)) = ∑<sub>v∈V(G)</sub> h(v)</em> (Cockayne et al., 2004). 
+                    Uma função de dominação romana é <strong>ótima</strong> se ela tem o menor peso possível.
+                  </p>
+                  <p>
+                    O <strong>número de dominação romana</strong> é o menor peso que uma função de dominação romana de G pode ter 
+                    e é denotado por <strong>γ<sub>R</sub>(G)</strong>. O <strong>Problema de Dominação Romana (PDR)</strong> consiste em determinar 
+                    <em>γ<sub>R</sub>(G)</em> para um grafo arbitrário G.
+                  </p>
+            </section>
+
+            <section id="problema-de-otimizacao">
+              <h2>Problemas de Otimização</h2>
+              <p>
+                De acordo com <strong>Papadimitriou e Steiglitz (1982)</strong>, um problema de otimização (PO) é composto por três elementos fundamentais:
+                um conjunto de instâncias (entradas), um conjunto de soluções viáveis <em>Sol(I)</em> para cada instância <em>I</em>, e uma função objetivo <em>val(S)</em>,
+                que associa um custo numérico a cada solução viável <em>S ∈ Sol(I)</em>.
+              </p>
+              <p>
+                Se o conjunto de soluções viáveis <em>Sol(I)</em> for vazio, a instância <em>I</em> é considerada inviável; caso contrário, ela é viável.
+                O objetivo de um PO é encontrar a melhor solução entre todas as viáveis.
+              </p>
+              <p>
+                Esses problemas podem ser classificados como de <strong>minimização</strong> ou <strong>maximização</strong>, dependendo se se busca a solução com menor ou maior custo, respectivamente.
+                Uma solução viável com custo ótimo é chamada de <strong>solução ótima</strong>, e seu valor para uma instância <em>I</em> é denotado por <em>OPT(I)</em>, onde <em>OPT(I) = val(S*)</em>, sendo <em>S*</em> uma solução ótima.
+                Vale destacar que <em>OPT(I)</em> só está definido se a instância for viável.
+              </p>
+              <p>
+                Problemas de otimização são, em geral, desafiadores do ponto de vista computacional. A teoria da complexidade os classifica da seguinte forma:
+              </p>
+              <ul>
+                <li><strong>P</strong>: Problemas solucionáveis em tempo polinomial.</li>
+                <li><strong>NP</strong>: Problemas de decisão (respostas SIM/NÃO) cujas soluções podem ser verificadas em tempo polinomial.</li>
+                <li><strong>NP-difícil (NP-hard)</strong>: Problemas aos quais todo problema em NP pode ser reduzido em tempo polinomial, indicando alta complexidade computacional.</li>
+                <li><strong>NP-completo</strong>: Problemas que pertencem tanto à classe NP quanto à classe NP-difícil, representando muitos problemas reais sem soluções conhecidas em tempo polinomial.</li>
+              </ul>
+            </section>
+           
+            <section id="dominacao-romana">
+              <h2>Dominação Romana em Grafos</h2>
+              <p>
+                A quantidade de legiões protegendo cada estado é indicada por um rótulo em cada vértice. 
+                A função <strong>h: V(G) → {0, 1, 2}</strong> é chamada de <strong>função de dominação romana (FDR)</strong> em G, 
+                se todo vértice <em>v ∈ V(G)</em> para o qual <em>h(v) = 0</em> está conectado a pelo menos um vértice <em>w</em> 
+                tal que <em>h(w) = 2</em> (Cockayne et al., 2004).
+              </p>
+              <p>
+                Portanto, utilizando a terminologia de Constantino, a restrição imposta por uma função de dominação romana 
+                equivale à exigência de que todo estado não protegido deve ser <strong>protegível</strong> (Stewart, 1999).
+              </p>
+              <p>
+                O <strong>peso</strong> da função de dominação romana é denotado por 
+                <em>h(V(G)) = ∑<sub>v∈V(G)</sub> h(v)</em> (Cockayne et al., 2004). 
+                Uma função de dominação romana é <strong>ótima</strong> se ela tem o menor peso possível.
+              </p>
+              <p>
+                O <strong>número de dominação romana</strong> é o menor peso que uma função de dominação romana de G pode ter 
+                e é denotado por <strong>γ<sub>R</sub>(G)</strong>. O <strong>Problema de Dominação Romana (PDR)</strong> consiste em determinar 
+                <em>γ<sub>R</sub>(G)</em> para um grafo arbitrário G.
+              </p>
+            </section>
+
+            <section id="dominacao-romana-tripla">
+              <h2>Dominação Romana Tripla em Grafos</h2>
+              <p>
+                Desde o artigo seminal de Cockayne et al. (2004) em dominação romana em grafos, foram desenvolvidas variantes para fortalecer e ampliar sua aplicabilidade. Entre essas variantes estão a <strong>dominação romana dupla</strong>, proposta por Beeler et al. (2016), e a <strong>dominação romana tripla</strong>, proposta por Abdollahzadeh Ahangar et al. (2021), que estabelecem diferentes limites para a quantidade de legiões que podem proteger um único estado.
+              </p>
+
+              <p>
+                Formalmente, a <strong>Função de Dominação Romana Tripla (FDRT)</strong> de um grafo G é uma função <em>h : V(G) → {0, 1, 2, 3, 4}</em>, que satisfaz as seguintes condições:
+              </p>
+
+              <ol>
+                <li>
+                  Se <em>h(v) = 0</em>, então v tem algum vizinho u tal que <em>h(u) = 4</em>; ou v tem dois vizinhos <em>u₁</em> e <em>u₂</em> tais que <em>h(u₁) ≥ 2</em> e <em>h(u₂) = 3</em>; ou v tem três vizinhos <em>u₁</em>, <em>u₂</em> e <em>u₃</em> tais que <em>h(u₁) = h(u₂) = h(u₃) = 2</em>.
+                </li>
+                <li>
+                  Se <em>h(v) = 1</em>, então v tem pelo menos um vizinho u tal que <em>h(u) ≥ 3</em>; ou dois vizinhos <em>u₁</em> e <em>u₂</em> tais que <em>h(u₁) = h(u₂) = 2</em>.
+                </li>
+                <li>
+                  Se <em>h(v) = 2</em>, então v tem algum vizinho u tal que <em>h(u) ≥ 2</em>.
+                </li>
+              </ol>
+
+              <p>
+                O peso da função de dominação romana tripla é denotado por <em>h(V(G)) = ∑<sub>v ∈ V(G)</sub> h(v)</em>. Uma FDRT é <strong>ótima</strong> se ela tem o menor peso possível. O <strong>número de dominação romana tripla</strong> de um grafo G é o menor peso de uma FDRT de G e é denotado por <em>γ<sub>3R</sub>(G)</em>.
+              </p>
+
+              <p>
+                O <strong>Problema de Dominação Romana Tripla (PDRT)</strong> consiste em determinar <em>γ<sub>3R</sub>(G)</em> para um grafo arbitrário G. A versão de decisão do PDRT consiste em, dado um grafo G e um inteiro ℓ, decidir se G tem uma FDRT com peso menor ou igual a ℓ. Esse problema de decisão é <strong>NP-completo</strong> (Abdollahzadeh Ahangar et al., 2021).
+              </p>
+              <div class="3RDF-metaheuristics">
+                  <figure>
+                    <img class="optimal-3RDF" src="images/Optimal-3RDF.jpg" alt="Exemplo de FDRT ótima">
+                    <figcaption> Exemplo de uma Função de Dominação Romana Tripla ótima.</figcaption>
+                  </figure>
+
+                   <aside>
+                        Aqui está a implementação de meta-heurísticas para esse problema fantástico!
+                       <a href = "https://github.com/isrreal/Triple-Roman-Domination-in-graphs"> Clique aqui </a>
+                   </aside>
+             </div>
+            </section>
+
+        </article>
+    </main>
+
+    <footer class="meu-copyright">
+        <p>&copy; 2025 - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

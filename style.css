@@ -1,0 +1,51 @@
+* {
+    background-color: lightgray;
+    border-radius: 10px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  font-style: italic;
+  background-color: lightgray;
+}
+
+figure, footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.triple-roman-domination-metaheuristics {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.roman-empire-trajan-image {
+    width: 35%;
+}
+
+.optimal-3RDF {
+    width: 35%;
+}
+
+.meu-copyright {
+    
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #D70040;
+}
+
+a:active {
+    color: white;
+}
